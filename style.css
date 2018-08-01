@@ -1,0 +1,257 @@
+html, body { 
+  font-family: 'Source Code Pro',
+    monospace;
+  color: #45A29E;
+  text-align: justify;
+}
+/* Navigation bar */
+#navbar{
+  position: fixed;
+  width: 100%;
+  background-color: #1f2833;
+  z-index: 1;
+}
+#navbar a {
+  float: left;
+  display: block;
+  color: #45A29E;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+  text-decoration: none;
+  font-size: 1.15em;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+#navbar > .nav-btn {
+  display: none;
+}
+#navbar > #nav-check{
+  display: none;
+}
+span {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  #navbar > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+  #navbar > .nav-btn > label {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    padding: 13px;
+  }
+  #navbar > .nav-btn > label:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 25px;
+    height: 25px;
+    
+  }
+  #navbar > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #45A29E;
+  }
+  #navbar > .nav-links {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #1f2833;
+    height: 10px;
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+    top: 50px;
+    left: 0px;
+    text-align: justify; 
+  }
+  #navbar > .nav-links > a {
+    display: block;
+    width: 100%;
+    text-align: justify;
+  }
+  #navbar > #nav-check:not(:checked) + .nav-links {
+    height: 0px;
+  }
+  #navbar > #nav-check:checked + .nav-links {
+    height: 30vh;
+    width: 30vw;
+    overflow: hidden;
+  }
+}
+
+
+
+/* Hey, I'm Cody Section */
+#welcome-section {
+  padding-top: 100px;
+  background-color: #1f2833;
+  height: 100vh;
+}
+#welcome-text {
+  margin: auto;
+  max-width: 600px;
+  padding: 10px;
+  position:absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+h1 {
+  text-align: center;
+  padding-bottom: 75px;
+  font-weight: bold;
+}
+a {
+  color: #45A29E;
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+#arrow-down {
+  display: block;
+  text-align: center;
+  font-size: 2.5em;
+  padding-top: 50px;
+  text-decoration: none;
+}
+#arrow-down:hover {
+  color: #66fcf1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-height: 750px){
+  #welcome-section{
+    font-size: 2vh
+  }
+}
+
+/* Skills Section */
+#skills-section{
+  text-align: justify;
+  margin: auto;
+  max-width: 600px;
+  height: 100vh;
+  padding: 10px;
+}
+  #skills-inner{
+  position:relative;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);  
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 2em;
+}
+#skills-icons {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  font-size: 4em;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  justify-items: center;
+}
+#skills-icons i {
+  padding: 15px;
+  padding-top: 50px;
+}
+/* Project section */
+#projects{
+  text-align: justify;
+  margin: auto;
+  max-width: 600px;
+  padding: 10px; 
+  padding-top: 75px;
+}
+
+.project-title {
+  padding-bottom: 15px;
+  font-size: 1.75em;
+  padding-top: 50px;
+  color: #5f6063;
+  font-weight: 700;
+}
+#projects p {
+  font-weight: 400;
+  font-size: 1.15em;
+  text-align: justify;
+  color: #5f6063;
+  padding-top: 5px;
+}
+/* Contact section */
+#contact{
+  text-align: justify;
+  margin: auto;
+  max-width: 600px;
+  padding: 10px; 
+  padding-top: 75px;
+}
+#contact-icons{
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  font-size: 4em;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  justify-items: center;
+}
+#contact-icons a:hover{
+  color: #66fcf1;
+  text-decoration: none;
+}
+#mobile-icon:hover{
+  color: #66fcf1;
+  text-decoration: none;
+}
+
+/* Mobile number popup */
+
+.mobile-number-layer{
+  position: absolute;
+  height: 50px;
+  width: 200px;
+  border-radius: 7px;
+  background: rgba(69, 162, 157, 0.452);
+  color: #1f2833;
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(-40%, -130%);
+  /* transform: translateX(-50%); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+  
+}
+
+.mobile-popup:hover .mobile-number-layer {
+  visibility: visible;
+  opacity: 1;
+}
+
+.number {
+  transition: .2s;
+  transform: translateY(1em);
+  font-size: 0.3em;
+}
+
+.mobile-popup:hover .number {
+  transform: translateY(0);
+}
+/* .move-popup {
+ transform: translatey(-75px);
+} */
